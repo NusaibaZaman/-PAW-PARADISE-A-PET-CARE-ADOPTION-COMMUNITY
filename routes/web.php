@@ -27,6 +27,10 @@ Route::middleware([
 });
 
 route::get('/redirect',[HomeController::class,'redirect']);
+route::get('/adoption',[HomeController::class,'adoption']);
+route::get('/description',[HomeController::class,'description']);
 route::post('/add_catagory',[AdminController::class,'add_catagory']);
 route::get('/delete_catagory/{id}',[AdminController::class,'delete_catagory']);
 route::get('/view_adoption',[AdminController::class,'view_adoption']);
+route::post('/add_adoption',[AdminController::class,'add_adoption']);
+route::get('/delete_adoption/{id}',[AdminController::class,'delete_adoption']);

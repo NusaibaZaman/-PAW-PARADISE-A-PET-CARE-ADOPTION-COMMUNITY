@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\adopt;
+
 class HomeController extends Controller
 {
     public function index(){
@@ -23,5 +25,14 @@ class HomeController extends Controller
         else{
             return view('home.userpage');
         }
+    }
+
+    public function adoption(){
+        $data=adopt:: all();
+        return view('home.adoption', compact('data'));
+    }
+
+    public function description(){
+        return view('home.description');
     }
 }

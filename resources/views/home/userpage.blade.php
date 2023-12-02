@@ -34,7 +34,7 @@
     <!-- Header part end-->
 
     <!-- banner part start-->
-    @include('home.adoption')
+    @include('home.adoptpart')
     <!-- banner part start-->
 
     <!-- product list start-->

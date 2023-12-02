@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('adopts', function (Blueprint $table) {
             $table->id();
+            $table->string("title")-> nullable();
             $table->string("type")-> nullable();
             $table->string("breed")-> nullable();
             $table->string("color")-> nullable();

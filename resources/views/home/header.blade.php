@@ -14,10 +14,10 @@
                         <div class="collapse navbar-collapse main-menu-item" id="navbarSupportedContent">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="D:\Laravel\paw2\resources\views\home\userpage.blade.php">Home</a>
+                                    <a class="nav-link" href="{url('redirect')}}">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="D:\Laravel\paw2\resources\views\home\userpage.blade.php">Adoption</a>
+                                    <a class="nav-link" href="{{url('adoption')}}">Adoption</a>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_1"

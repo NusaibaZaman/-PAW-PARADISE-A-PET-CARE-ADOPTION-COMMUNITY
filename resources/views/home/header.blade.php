@@ -52,6 +52,7 @@
                             </form>
                             @else
                             <a id="login_001" href="{{ route('login') }}"><i class="btn btn-white"></i>Login</a>
+                            <a id="login_001" href="{{ route('register') }}"><i class="btn btn-white"></i>Register</a>
                             @endauth
                             
                             @endif

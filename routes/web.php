@@ -15,6 +15,7 @@ use App\Http\Controllers\AdminController;
 */
 route::get('/',[HomeController::class,'index']);
 route::get('/redirect',[HomeController::class,'logout']);
+route::get('/redirect',[HomeController::class,'register']);
 route::get('/view_category',[AdminController::class,'view_category']);
 Route::middleware([
     'auth:sanctum',

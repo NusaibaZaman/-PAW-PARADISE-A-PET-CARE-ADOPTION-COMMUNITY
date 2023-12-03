@@ -17,6 +17,10 @@ class HomeController extends Controller
         return view('home.home');
     }
 
+    public function register(){
+        return view('auth.register');
+    }
+
     public function redirect(){
         $usertype=Auth::user()->usertype;
         if($usertype=='1'){

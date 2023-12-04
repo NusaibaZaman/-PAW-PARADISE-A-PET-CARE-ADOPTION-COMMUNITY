@@ -14,7 +14,7 @@
                         <div class="collapse navbar-collapse main-menu-item" id="navbarSupportedContent">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{url('index')}}">Home</a>
+                                    <a class="nav-link" href="{url('redirect')}}">Home</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{url('adoption')}}">Adoption</a>
@@ -32,11 +32,11 @@
                                 </li>
                                 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="home\userpage.blade.php">Blog</a>
+                                    <a class="nav-link" href="{{url('blog')}}">Blog</a>
                                 </li>
                                 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="contact.html">Contact</a>
+                                    <a class="nav-link" href="{{url('vethome')}}">Vet Information</a>
                                 </li>
                             </ul>
                         </div>
@@ -53,6 +53,7 @@
                             @else
                             <a id="login_001" href="{{ route('login') }}"><i class="btn btn-white"></i>Login</a>
                             <a id="login_001" href="{{ route('register') }}"><i class="btn btn-white"></i>Register</a>
+
                             @endauth
                             
                             @endif

@@ -26,7 +26,7 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
-
+route::get('/index',[HomeController::class,'index']);
 route::get('/redirect',[HomeController::class,'redirect']);
 route::get('/adoption',[HomeController::class,'adoption']);
 route::get('/description',[HomeController::class,'description']);

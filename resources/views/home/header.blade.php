@@ -14,7 +14,7 @@
                         <div class="collapse navbar-collapse main-menu-item" id="navbarSupportedContent">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{url('redirect')}}">Home</a>
+                                    <a class="nav-link" href="{{url('index')}}">Home</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{url('adoption')}}">Adoption</a>

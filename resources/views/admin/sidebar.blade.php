@@ -73,36 +73,20 @@
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="{{url('post_page')}}">
+            <a class="nav-link" href="">
               <span class="menu-icon">
                 <i class="mdi mdi-playlist-play"></i>
               </span>
-              <span class="menu-title">Add Blog Post</span>
-            </a>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="{{url('/show_post')}}">
-              <span class="menu-icon">
-                <i class="mdi mdi-playlist-play"></i>
-              </span>
-              <span class="menu-title">Show Blog Posts</span>
+              <span class="menu-title">Products</span>
             </a>
           </li>
 
           <li class="nav-item menu-items">
-            <a class="nav-link" href="{{url('add_vet')}}">
+            <a class="nav-link" href="{{url('view_category')}}">
               <span class="menu-icon">
                 <i class="mdi mdi-playlist-play"></i>
               </span>
-              <span class="menu-title">Add Vet Information</span>
-            </a>
-
-            <li class="nav-item menu-items">
-            <a class="nav-link" href="{{url('/view_vet')}}">
-              <span class="menu-icon">
-                <i class="mdi mdi-playlist-play"></i>
-              </span>
-              <span class="menu-title">Show Vet Information</span>
+              <span class="menu-title">Category</span>
             </a>
           
         </ul>

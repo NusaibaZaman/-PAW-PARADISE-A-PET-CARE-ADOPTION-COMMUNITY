@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\adopt;
+use App\Models\Post;
+use App\Models\Vet;
 
 class HomeController extends Controller
 {
@@ -16,7 +18,6 @@ class HomeController extends Controller
     public function logout(){
         return view('home.home');
     }
-
     public function register(){
         return view('auth.register');
     }
@@ -38,5 +39,15 @@ class HomeController extends Controller
 
     public function description(){
         return view('home.description');
+    }
+    public function blog()
+    {
+        $post = Post::all();
+        return view('home.blog',compact('post'));
+    }
+    public function vethome()
+    {
+        $post = Vet::all();
+        return view('home.vethome',compact('post'));
     }
 }

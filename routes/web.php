@@ -16,6 +16,7 @@ use App\Http\Controllers\AdminController;
 route::get('/',[HomeController::class,'index']);
 route::get('/redirect',[HomeController::class,'logout']);
 route::get('/redirect',[HomeController::class,'register']);
+
 route::get('/view_category',[AdminController::class,'view_category']);
 Route::middleware([
     'auth:sanctum',
@@ -26,12 +27,30 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
-route::get('/index',[HomeController::class,'index']);
+
 route::get('/redirect',[HomeController::class,'redirect']);
 route::get('/adoption',[HomeController::class,'adoption']);
-route::get('/description',[HomeController::class,'description']);
+route::get('/description/{id}',[HomeController::class,'description']);
 route::post('/add_catagory',[AdminController::class,'add_catagory']);
 route::get('/delete_catagory/{id}',[AdminController::class,'delete_catagory']);
 route::get('/view_adoption',[AdminController::class,'view_adoption']);
 route::post('/add_adoption',[AdminController::class,'add_adoption']);
 route::get('/delete_adoption/{id}',[AdminController::class,'delete_adoption']);
+Route::get('/post_page',[AdminController::class,'post_page']);
+Route::post('/add_post',[AdminController::class,'add_post']);
+Route::get('/show_post',[AdminController::class,'show_post']);
+Route::get('/delete_post/{id}',[AdminController::class,'delete_post']);
+route::get('/blog',[HomeController::class,'blog']);
+route::get('/add_vet',[AdminController::class,'add_vet']);
+route::get('/view_vet',[AdminController::class,'view_vet']);
+route::post('/add_vet_info',[AdminController::class,'add_vet_info']);
+Route::get('/delete_vet/{id}',[AdminController::class,'delete_vet']);
+route::get('/vetpage',[HomeController::class,'vetpage']);
+route::get('/vethome',[HomeController::class,'vethome']);
+Route::get('/post_details/{id}',[HomeController::class,'post_details']);
+
+//new changes
+route::get('/index',[HomeController::class,'index']);
+route::get('/adoption',[HomeController::class,'adoption']);
+route::get('/adoptpost',[HomeController::class,'adoptpost']);
+route::get('/add_adoption',[HomeController::class,'add_adoption']);

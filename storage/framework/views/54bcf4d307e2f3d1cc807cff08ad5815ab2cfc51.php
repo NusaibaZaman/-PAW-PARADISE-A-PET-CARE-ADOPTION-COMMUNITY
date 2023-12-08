@@ -31,7 +31,13 @@
             width: 370px;
             height: 300px;
         }
+        .post
+        {
+            text-align: center;
+            padding-top:40px;
+        }
     </style>
+
 
     
 </head>
@@ -56,17 +62,24 @@
             </div>
         </div>
     </section>
+    <sectiom>
+        <div class="post">
+            <a href="<?php echo e(url('adoptpost')); ?>" class="btn_3">Add Adoption</a>
+        </div>
+    </section>
     <section class="product_list section_padding">
         <div class="container">
-            <div class="col-md-8">
+            <div class="col-md-20">
                 <div class="product_list">
                     <div class="row">
                         <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <div class="col-lg-6 col-sm-6">
+                        <div class="col-lg-4 col-sm-6">
                             <div class="single_product_item">
                                 <img src="/adoptpic/<?php echo e($data->image); ?>" alt="#" class="img-fluid">
-                                <h3> <a href="<?php echo e(url('description')); ?>"><?php echo e($data->title); ?></a> </h3>
+                                <h3> <a href="<?php echo e(url('description',$data->id)); ?>"><?php echo e($data->title); ?></a> </h3>
+                                <p>Age: <?php echo e($data->age); ?></p>
                                 <p>Personality: <?php echo e($data->personality); ?></p>
+                                <p>Adopter: <?php echo e($data->number); ?></p>
                             </div>
                         </div>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

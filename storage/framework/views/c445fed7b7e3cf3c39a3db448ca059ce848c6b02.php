@@ -12,7 +12,7 @@
                   <span class="count bg-success"></span>
                 </div>
                 <div class="profile-name">
-                  <h5 class="mb-0 font-weight-normal">Henry Klein</h5>
+                  <h5 class="mb-0 font-weight-normal">User</h5>
                   <span>Gold Member</span>
                 </div>
               </div>
@@ -73,20 +73,36 @@
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="<?php echo e(url('post_page')); ?>">
               <span class="menu-icon">
                 <i class="mdi mdi-playlist-play"></i>
               </span>
-              <span class="menu-title">Products</span>
+              <span class="menu-title">Add Blog Post</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="<?php echo e(url('/show_post')); ?>">
+              <span class="menu-icon">
+                <i class="mdi mdi-playlist-play"></i>
+              </span>
+              <span class="menu-title">Show Blog Posts</span>
             </a>
           </li>
 
           <li class="nav-item menu-items">
-            <a class="nav-link" href="<?php echo e(url('view_category')); ?>">
+            <a class="nav-link" href="<?php echo e(url('add_vet')); ?>">
               <span class="menu-icon">
                 <i class="mdi mdi-playlist-play"></i>
               </span>
-              <span class="menu-title">Category</span>
+              <span class="menu-title">Add Vet Information</span>
+            </a>
+
+            <li class="nav-item menu-items">
+            <a class="nav-link" href="<?php echo e(url('/view_vet')); ?>">
+              <span class="menu-icon">
+                <i class="mdi mdi-playlist-play"></i>
+              </span>
+              <span class="menu-title">Show Vet Information</span>
             </a>
           
         </ul>

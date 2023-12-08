@@ -32,11 +32,11 @@
                                 </li>
                                 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="home\userpage.blade.php">Blog</a>
+                                    <a class="nav-link" href="<?php echo e(url('blog')); ?>">Blog</a>
                                 </li>
                                 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="contact.html">Contact</a>
+                                    <a class="nav-link" href="<?php echo e(url('vethome')); ?>">Vet Information</a>
                                 </li>
                             </ul>
                         </div>
@@ -53,6 +53,7 @@
                             <?php else: ?>
                             <a id="login_001" href="<?php echo e(route('login')); ?>"><i class="btn btn-white"></i>Login</a>
                             <a id="login_001" href="<?php echo e(route('register')); ?>"><i class="btn btn-white"></i>Register</a>
+
                             <?php endif; ?>
                             
                             <?php endif; ?>

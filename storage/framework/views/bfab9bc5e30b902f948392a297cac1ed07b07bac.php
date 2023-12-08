@@ -114,7 +114,12 @@
 
                         <div class="div_design">
                             <Label> Age :</label>
-                            <input type='number' name='age' placeholder='Age' required="">
+                            <input type='text' name='age' placeholder='Age' required="">
+                        </div>
+
+                        <div class="div_design">
+                            <Label> Description :</label>
+                            <input type='text' name='description' placeholder='Description' required="">
                         </div>
 
                         <div class="div_design">
@@ -146,6 +151,9 @@
                         <td>Gender</td>
                         <td>Personality</td>
                         <td>Picture</td>
+                        <td>Number</td>
+                        <td>User</td>
+                        <td>Description</td>
                         <td>Remove</td>
                     </tr>
                     <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -159,6 +167,9 @@
                         <td><?php echo e($data->personality); ?></td>
                         <td>
                             <img src="/adoptpic/<?php echo e($data->image); ?>" class='img_size'></td>
+                        <td><?php echo e($data->number); ?></td>
+                        <td><?php echo e($data->user); ?></td>
+                        <td><?php echo e($data->description); ?></td>
                         <td>
                             <a class="btn btn-danger" href ="<?php echo e(url('delete_adoption',$data->id)); ?>">Remove</a>
                         </td>

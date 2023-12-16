@@ -37,6 +37,8 @@ class AdminController extends Controller
 
     public function add_adoption(Request $request)
     {
+        $user =Auth::user();
+        $id=$user->id;
         $adoption= new adopt;
         $adoption-> title=$request-> title;
         $adoption-> type=$request-> type;
@@ -45,8 +47,9 @@ class AdminController extends Controller
         $adoption-> age=$request->age;
         $adoption-> gender=$request->gender;
         $adoption-> personality=$request->personality;
-        $adoption-> number="01911111111";
-        $adoption-> user= "Admin";
+        $adoption-> number='01111111110';
+        $adoption-> user='Admin';
+        $adoption-> user_id=$id ;
         $adoption-> description=$request->description;
         $image=$request-> image;
         $imagename=time().'.'.$image->getClientOriginalExtension();

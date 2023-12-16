@@ -77,9 +77,7 @@
                             <div class="single_product_item">
                                 <img src="/adoptpic/{{$data->image}}" alt="#" class="img-fluid">
                                 <h3> <a href="{{url('description',$data->id)}}">{{$data->title}}</a> </h3>
-                                <p>Age: {{$data->age}}</p>
-                                <p>Personality: {{$data->personality}}</p>
-                                <p>Adopter: {{$data->number}}</p>
+                                <p>Posted by: {{$data->user}}</p>
                             </div>
                         </div>
                         @endforeach

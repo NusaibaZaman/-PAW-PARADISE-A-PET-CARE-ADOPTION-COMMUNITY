@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="home/css/slick.css">
     <!-- style CSS -->
     <link rel="stylesheet" href="home/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <style>
         .div_center
         {
@@ -40,6 +41,12 @@
         .div_design
         {
             padding-bottom: 15px;
+        }
+        
+
+        select {
+            padding: 10px;
+            font-size: 16px;
         }
     </style>
     
@@ -70,8 +77,10 @@
                 </div>
                 @endif
                 <div class='div_center'>
-                    <form action="{{url('/add_adoption')}}" method="POST" enctype="multipart/form-data">
+                    <form action="{{url('/add_adoption2')}}" method="POST" enctype="multipart/form-data">
                         @csrf
+                        
+
                         <div class="div_design">
                             <Label> Type of Animal :</label>
                             <input type='text' name='type' placeholder='Type' required="">
@@ -103,16 +112,6 @@
                         </div>
 
                         <div class="div_design">
-                            <Label> Number :</label>
-                            <input type='text' name='number' placeholder='Number' required="">
-                        </div>
-
-                        <div class="div_design">
-                            <Label> User :</label>
-                            <input type='text' name='user' placeholder='User' required="">
-                        </div>
-
-                        <div class="div_design">
                             <Label> Description :</label>
                             <input type='text' name='description' placeholder='Description' required="">
                         </div>
@@ -140,6 +139,26 @@
                 <div class="col-lg-12">
                     <div class="breadcrumb_iner">
                         <h2>Your Adoption</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="product_list section_padding">
+        <div class="container">
+            <div class="col-md-20">
+                <div class="product_list">
+                    <div class="row">
+                        @foreach($data as $data)
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="single_product_item">
+                                <img src="/adoptpic/{{$data->image}}" alt="#" class="img-fluid">
+                                <h3> <a href="{{url('description',$data->id)}}">{{$data->title}}</a> </h3>
+                                <p>Posted by {{$data->user}}</p>
+                            </div>
+                        </div>
+                        @endforeach
+                        </div>
                     </div>
                 </div>
             </div>

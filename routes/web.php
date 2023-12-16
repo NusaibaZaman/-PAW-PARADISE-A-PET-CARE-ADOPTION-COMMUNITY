@@ -52,5 +52,5 @@ Route::get('/post_details/{id}',[HomeController::class,'post_details']);
 //new changes
 route::get('/index',[HomeController::class,'index']);
 route::get('/adoption',[HomeController::class,'adoption']);
-route::get('/adoptpost',[HomeController::class,'adoptpost']);
-route::get('/add_adoption',[HomeController::class,'add_adoption']);
+route::get('/adoptpost',[HomeController::class,'adoptpost'])-> middleware('auth');
+route::post('/add_adoption2',[HomeController::class,'add_adoption2']);

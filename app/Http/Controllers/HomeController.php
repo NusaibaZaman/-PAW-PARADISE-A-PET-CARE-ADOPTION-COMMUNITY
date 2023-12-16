@@ -8,7 +8,6 @@ use App\Models\User;
 use App\Models\adopt;
 use App\Models\Post;
 use App\Models\Vet;
-
 class HomeController extends Controller
 {
     public function index(){
@@ -60,11 +59,18 @@ class HomeController extends Controller
     
     //new
     public function adoptpost(){
-        return view('home.adoptpost');
+        $user =Auth::user();
+        $id=$user->id;
+        $data=adopt:: where('user_id','=',$id)->get();
+        return view('home.adoptpost', compact('data'));
     } 
 
-    public function add_adoption(Request $request)
+    public function add_adoption2(Request $request)
     {
+        $user =Auth::user();
+        $id=$user->id;
+        $name=$user->name;
+        $number=$user->phone;
         $adoption= new adopt;
         $adoption-> title=$request-> title;
         $adoption-> type=$request-> type;
@@ -73,8 +79,9 @@ class HomeController extends Controller
         $adoption-> age=$request->age;
         $adoption-> gender=$request->gender;
         $adoption-> personality=$request->personality;
-        $adoption-> number=$request->number;
-        $adoption-> user=$request->user;
+        $adoption-> number=$number;
+        $adoption-> user=$name ;
+        $adoption-> user_id=$id ;
         $adoption-> description=$request->description;
         $image=$request-> image;
         $imagename=time().'.'.$image->getClientOriginalExtension();

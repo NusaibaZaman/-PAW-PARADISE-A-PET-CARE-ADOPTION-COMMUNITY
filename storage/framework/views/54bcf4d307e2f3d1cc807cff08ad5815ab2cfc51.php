@@ -77,9 +77,7 @@
                             <div class="single_product_item">
                                 <img src="/adoptpic/<?php echo e($data->image); ?>" alt="#" class="img-fluid">
                                 <h3> <a href="<?php echo e(url('description',$data->id)); ?>"><?php echo e($data->title); ?></a> </h3>
-                                <p>Age: <?php echo e($data->age); ?></p>
-                                <p>Personality: <?php echo e($data->personality); ?></p>
-                                <p>Adopter: <?php echo e($data->number); ?></p>
+                                <p>Posted by: <?php echo e($data->user); ?></p>
                             </div>
                         </div>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

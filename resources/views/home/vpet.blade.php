@@ -159,27 +159,35 @@
           <div class="row">
 
           @if(!empty($data) && $data->count() > 0)
-            <div class="col-md-2>
 
-            </div>
-
-            <div class="col-md-6">
+            <div class="col-md-8">
                 @foreach($data as $data)
                 <div class="col-lg-6 col-sm-6">
                     <div class="single_product_item">
                         <img src="/adoptpic/{{$data->image}}" alt="#" class="img-fluid">
                         <h3> <a>{{$data->title}}</a> </h3>
                     </div>
-                </div>
-                @endforeach
-            </div>
-
-
-            <div class="col-md-2">
-                <div>
+                    <div>
                     <form action="{{url('del_vpet')}}" method="get">
                         <div class="div_design">
                             <button type='submit' name='submit' value=1> Give Pet Up for Adoption </button>
+                        </div>
+                    </form>
+                </div>
+
+
+                </div>
+                @endforeach
+
+
+            </div>
+
+
+            <div class="col-md-4">
+                <div>
+                    <form action="{{url('description_vpet')}}" method="get">
+                        <div class="div_design">
+                            <button type='submit' name='submit' value=1> Make Your VPet Come to Life </button>
                         </div>
                     </form>
                 </div>
@@ -188,43 +196,52 @@
           @else
 
             @if($message='create')
-                 <div>
-                    <form action="{{url('add_vpet')}}" method="get">
-
-                    @csrf
-
-                    <h1 class="search">DESCRIBE YOUR IDEAL PET</h1>
-
-                        <div class="search_options">
-                            <Label> Type :</label>
-                            <input type='text' name='type' placeholder='Type of Animal'>
+                <section>
+                        @if(session()->has('message'))
+                        <div class="alert alert-success" role="alert">
+                            <button type="button" class='close' data-dismiss='alert' aria-hidden="true">X</button>
+                            {{session()->get('message')}}
                         </div>
+                        @endif
+                        <div class='div_center'>
 
-                        <div class="search_options">
-                            <Label> Breed :</label>
-                            <input type='text' name='breed' placeholder='Breed'>
+                            <form action="{{url('add_vpet')}}" method="get">
+
+                            @csrf
+
+                            <h1 class="search">DESCRIBE YOUR IDEAL PET</h1>
+
+                                <div class="search_options">
+                                    <Label> Type :</label>
+                                    <input type='text' name='type' placeholder='Type of Animal'>
+                                </div>
+
+                                <div class="search_options">
+                                    <Label> Breed :</label>
+                                    <input type='text' name='breed' placeholder='Breed'>
+                                </div>
+
+                                <div class="search_options">
+                                    <Label> Gender :</label>
+                                    <input type='text' name='gender' placeholder='Gender'>
+                                </div>
+
+                                <h1 class="search_options">Now name them</h1>
+
+                                <div class="search_options">
+                                    <Label> Name :</label>
+                                    <input type='text' name='name' placeholder='Name'>
+                                </div>
+
+
+
+                                <div class="div_design">
+                                    <button type='submit' name='submit' value=1> Adopt </button>
+                                </div>
+
+                            </form>
                         </div>
-
-                        <div class="search_options">
-                            <Label> Gender :</label>
-                            <input type='text' name='gender' placeholder='Gender'>
-                        </div>
-
-                        <h1 class="search_options">Now name them</h1>
-
-                        <div class="search_options">
-                            <Label> Name :</label>
-                            <input type='text' name='name' placeholder='Name'>
-                        </div>
-
-
-
-                        <div class="div_design">
-                            <button type='submit' name='submit' value=1> Adopt </button>
-                        </div>
-
-                    </form>
-                </div>
+                </section>
 
             @else
                 <section>

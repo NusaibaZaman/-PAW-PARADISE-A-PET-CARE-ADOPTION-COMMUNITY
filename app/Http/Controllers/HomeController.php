@@ -49,6 +49,7 @@ class HomeController extends Controller
         $data=adopt::find($id);
         return view('home.description', compact('data'));
     }
+
     public function blog()
     {
         $post = Post::all();
@@ -170,7 +171,7 @@ class HomeController extends Controller
         return view('home.adoption', compact('data','message'));
     }
 
-    // failures
+    ////////////////// failures
     public function admin_search_breed($type)
 
     {
@@ -178,7 +179,7 @@ class HomeController extends Controller
 
         return response()->json($breed);
     }
-
+    ///////////////////////
 
     public function show_vpet()
     {
@@ -223,6 +224,7 @@ class HomeController extends Controller
         if($type != 'nothing')
         {
             $imag->where('type','=',$type);
+            echo "adsas";
         }
         if($breed != 'nothing')
         {
@@ -240,15 +242,38 @@ class HomeController extends Controller
         $vpet-> image=$imag[0]->image;
 
         $vpet->save();
-        return redirect()-> back()->with('message','VPet Created');
+        return redirect()-> back()->with('message','VPet Created!');
     }
 
-    public function del_vpet(Request $request){
+    public function del_vpet(Request $request)
+    {
         $userid=Auth::user()->id;
         $message="";
         $data=vpet::where('user','=',$userid);
         $data->delete();
         return redirect()->back()->with('message','Your VPet is looking for a new home now :(');
 
+    }
+
+    public function description_vpet(Request $request)
+    {
+        $userid=Auth::user()->id;
+        $message="";
+        $users_data=vpet::where('user','=',$userid)->get();
+
+        $users_data=$users_data[0];
+
+        $message= "";
+        $data=adopt::where('type','=',$users_data->type)->orWhere(
+        'breed','=',$users_data->breed)->get();
+
+
+        if (count($data) == 0)
+        {
+            $message = "NO MATCHES FOUND";
+        }
+
+
+        return view('home.adoption', compact('data','message'));
     }
 }

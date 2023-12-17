@@ -65,6 +65,7 @@ route::get('/home_search_vpet',[HomeController::class,'home_search_vpet']);
 route::get('/create_vpet',[HomeController::class,'create_vpet']);
 route::get('/add_vpet',[HomeController::class,'add_vpet']);
 route::get('/del_vpet',[HomeController::class,'del_vpet']);
+route::get('/description_vpet',[HomeController::class,'description_vpet']);
 
 
 //failures
